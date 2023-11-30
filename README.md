@@ -1,1 +1,1 @@
-# dashboard-acess
+# dashboard-access
