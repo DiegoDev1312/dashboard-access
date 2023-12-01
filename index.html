@@ -6,10 +6,15 @@
     <title>Dashboard</title>
     <link href="dist/output.css" rel="stylesheet">
 </head>
-<body class="grid md:grid-cols-[14vw,auto] bg-zinc-800 relative">
-    <nav class="menu-area">
-        <div class="bg-green-600 h-20 w-20 rounded-full text-white flex items-center justify-center">
-            Logo
+<body class="grid md:grid-cols-[240px,auto] bg-zinc-800 relative">
+    <nav data-menu-area class="menu-area relative">
+        <div>
+            <div class="bg-green-600 h-20 w-20 rounded-full text-white flex items-center justify-center">
+                Logo
+            </div>
+            <button data-close-drawer class="md:hidden">
+                <img class="h-6 w-6 absolute right-4 top-4" src="/src/images/icons/close-icon.svg" />
+            </button>
         </div>
         <menu data-menu-drawer class="w-full border-t border-white mt-7">
             <li data-menu="home" class="menu-option">
@@ -32,10 +37,17 @@
             </li>
         </menu>
     </nav>
+    <div data-bg-opacity class="hidden">
+    </div>
     <div>
-        <header class="w-full px-6 bg-zinc-900">
+        <header class="w-full md:px-12 px-6 bg-zinc-900">
             <div class="w-full flex items-center justify-between py-3 relative">
-                <h1 class="title-page">Início</h1>
+                <div class="flex items-center gap-4">
+                    <button data-drawer-button>
+                        <img class="h-8 w-8 object-cover md:hidden" src="/src/images/icons/hamburger-icon.svg" />
+                    </button>
+                    <h1 class="title-page">Início</h1>
+                </div>
                 <button data-perfil-button class="h-14 w-14 rounded-full">
                     <img class="" src="/src/images/icons/perfil-user-icon.svg" />
                 </button>
@@ -48,10 +60,10 @@
             </div>
         </header>
         <main class="w-full md:px-12 px-6 mb-7">
-            <h1 class="text-white text-3xl mt-3">Apartamentos</h1>
-            <h2 class="text-green-500 text-xl mt-1 mb-3">Listagem de apartamentos e contas</h2>
+            <h1 class="text-white text-xl mt-3 font-bold md:text-3xl">Apartamentos</h1>
+            <h2 class="text-green-500 text-base mt-1 mb-3 md:text-xl ">Listagem de apartamentos e boletos</h2>
             <table class="w-full bg-zinc-700 rounded-lg mb-4">
-                <thead>
+                <thead class="text-xs md:text-lg">
                     <tr class="text-left text-white">
                         <th class="p-2 md:p-3">Apartamento</th>
                         <th>Mês</th>
@@ -59,7 +71,7 @@
                         <th>Boleto</th>
                     </tr>
                 </thead>
-                <tbody data-tbody-apartments>
+                <tbody data-tbody-apartments class="text-xs md:text-lg">
                 </tbody>
             </table>
             <div data-pagination-area class="w-full flex items-center justify-center gap-2">

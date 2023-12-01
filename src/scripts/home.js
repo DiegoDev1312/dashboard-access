@@ -77,8 +77,9 @@ function createPages(totalPage) {
     paginationArea.innerHTML = '';
     for (let i = 0; i < totalPage; i++) {
         const paginationButton = createElement('button'); 
-        const focusButtonValue = i + 1 === page ? '12' : '10';
-        paginationButton.className = `bg-zinc-700 h-${focusButtonValue} w-${focusButtonValue} flex items-center justify-center text-white rounded`;
+        const focusButtonValue = i + 1 === page ? 12 : 10;
+        paginationButton.className =
+            `bg-zinc-700 h-${focusButtonValue} w-${focusButtonValue} flex items-center justify-center text-white rounded`;
         paginationButton.textContent = i + 1;
 
         paginationButton.addEventListener('click', () => {
