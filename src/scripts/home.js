@@ -51,7 +51,7 @@ function createApartmentTable(table) {
     const actionImage = createElement('img');
 
     if (table.paymentSlip) {        
-        actionImage.src = '/src/images/icons/pdf-icon.svg'
+        actionImage.src = './src/images/icons/pdf-icon.svg'
         actionImage.className = 'h-6 w-6 pointer';
         actionTdButton.appendChild(actionImage);
         actionTdButton.addEventListener('click', () => handleDownloadPress(table.paymentSlip));
