@@ -5,6 +5,8 @@ const closeDrawerButton = document.querySelector('[data-close-drawer]');
 const bgOpacity = document.querySelector('[data-bg-opacity]');
 
 function verifyDrawerSelected(selected) {
+    menuArea.className = 'menu-area';
+
     const drawerOptions = menuDrawer.querySelectorAll('li');
     for (const option of drawerOptions) {
         const isSelected = option.getAttribute('data-menu') === selected;        

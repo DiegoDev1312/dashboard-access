@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Recibos</title>
     <link href="../../dist/output.css" rel="stylesheet">
 </head>
-<body class="grid sm:grid-cols-[14rem,auto] bg-zinc-800 relative">
-    <nav class="menu-area">
-        <div class="bg-green-600 h-20 w-20 rounded-full text-white flex items-center justify-center">
-            Logo
+<body class="grid md:grid-cols-[240px,auto] bg-zinc-800 relative">
+    <nav data-menu-area class="menu-area relative">
+        <div>
+            <div class="bg-green-600 h-20 w-20 rounded-full text-white flex items-center justify-center">
+                Logo
+            </div>
+            <button data-close-drawer class="md:hidden">
+                <img class="h-6 w-6 absolute right-4 top-4" src="../images/icons/close-icon.svg" />
+            </button>
         </div>
         <menu data-menu-drawer class="w-full border-t border-white mt-7">
             <li data-menu="home" class="menu-option">
@@ -32,12 +37,19 @@
             </li>
         </menu>
     </nav>
+    <div data-bg-opacity class="hidden">
+    </div>
     <div>
-        <header class="w-full px-6 bg-zinc-900">
+        <header class="w-full md:px-12 px-6 bg-zinc-900">
             <div class="w-full flex items-center justify-between py-3 relative">
-                <h1 class="title-page">Recibos</h1>
+                <div class="flex items-center gap-4">
+                    <button data-drawer-button>
+                        <img class="h-8 w-8 object-cover md:hidden" src="../images/icons/hamburger-icon.svg" />
+                    </button>
+                    <h1 class="title-page">Início</h1>
+                </div>
                 <button data-perfil-button class="h-14 w-14 rounded-full">
-                    <img class="" src="../images/icons/perfil-user-icon.svg" />
+                    <img src="../images/icons/perfil-user-icon.svg" />
                 </button>
                 <div data-perfil-option class="w-40 bg-white absolute top-[4.5rem] right-6 rounded-md py-2 hidden shadow-md shadow-black">
                     <ul class="w-full">
@@ -47,8 +59,9 @@
                 </div>
             </div>
         </header>
-        <main class="w-full px-6">
-
+        <main class="w-full md:px-12 px-6 mb-7">
+            <h1 class="text-white text-xl mt-3 font-bold md:text-3xl">Apartamentos</h1>
+            <h2 class="text-green-500 text-base mt-1 mb-3 md:text-xl ">Listagem de apartamentos e boletos</h2>
         </main>
     </div>
     <script src="../scripts/drawer.js"></script>
