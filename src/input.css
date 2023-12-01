@@ -4,9 +4,12 @@
 
 @layer components {
     .menu-area {
-        @apply h-screen w-56 bg-zinc-900 flex flex-col items-center pt-4 shadow-lg shadow-black;
+        @apply bg-zinc-900 hidden flex-col items-center pt-4 shadow-lg shadow-black h-screen w-[14vw] md:flex;
     }
     .menu-option {
-        @apply hover:bg-green-600 text-center transition-all ease-in duration-200 text-white mt-4 w-full py-3;
+        @apply hover:bg-green-600 transition-all ease-in duration-200 text-white mt-4 w-full py-3;
+    }
+    .title-page {
+        @apply text-white text-3xl;
     }
 }

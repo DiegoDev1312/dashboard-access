@@ -1,0 +1,1 @@
+verifyDrawerSelected('receipts');
