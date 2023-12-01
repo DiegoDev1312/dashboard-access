@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link href="dist/output.css" rel="stylesheet">
+    <link href="./dist/output.css" rel="stylesheet">
 </head>
 <body class="grid md:grid-cols-[240px,auto] bg-zinc-800 relative">
     <nav data-menu-area class="menu-area relative">
@@ -13,25 +13,25 @@
                 Logo
             </div>
             <button data-close-drawer class="md:hidden">
-                <img class="h-6 w-6 absolute right-4 top-4" src="/src/images/icons/close-icon.svg" />
+                <img class="h-6 w-6 absolute right-4 top-4" src="./src/images/icons/close-icon.svg" />
             </button>
         </div>
         <menu data-menu-drawer class="w-full border-t border-white mt-7">
             <li data-menu="home" class="menu-option">
                 <a class="flex pl-3" href="index.html">
-                    <img src="/src/images/icons/homeIcon.svg" class="h-6 w-6 mr-2" />
+                    <img src="./src/images/icons/homeIcon.svg" class="h-6 w-6 mr-2" />
                     Início
                 </a>
             </li>
             <li  data-menu="residents" class="menu-option">
-                <a class="flex pl-3" href="/src/screens/residents.html">
-                    <img src="/src/images/icons/usersIcon.svg" class="h-6 w-6 mr-2 object-cover" />
+                <a class="flex pl-3" href="./src/screens/residents.html">
+                    <img src="./src/images/icons/usersIcon.svg" class="h-6 w-6 mr-2 object-cover" />
                     Moradores
                 </a>
             </li>
             <li data-menu="receipts" class="menu-option">
-                <a class="flex pl-3" href="/src/screens/receipts.html">
-                    <img src="/src/images/icons/notes.svg" class="h-6 w-6 mr-2 object-cover" />
+                <a class="flex pl-3" href="./src/screens/receipts.html">
+                    <img src="./src/images/icons/notes.svg" class="h-6 w-6 mr-2 object-cover" />
                     Recibos
                 </a>
             </li>
@@ -44,12 +44,12 @@
             <div class="w-full flex items-center justify-between py-3 relative">
                 <div class="flex items-center gap-4">
                     <button data-drawer-button>
-                        <img class="h-8 w-8 object-cover md:hidden" src="/src/images/icons/hamburger-icon.svg" />
+                        <img class="h-8 w-8 object-cover md:hidden" src="./src/images/icons/hamburger-icon.svg" />
                     </button>
                     <h1 class="title-page">Início</h1>
                 </div>
                 <button data-perfil-button class="h-14 w-14 rounded-full">
-                    <img class="" src="/src/images/icons/perfil-user-icon.svg" />
+                    <img class="" src="./src/images/icons/perfil-user-icon.svg" />
                 </button>
                 <div data-perfil-option class="w-40 bg-white absolute top-[4.5rem] right-6 rounded-md py-2 hidden shadow-md shadow-black">
                     <ul class="w-full">
@@ -78,8 +78,8 @@
             </div>
         </main>
     </div>
-    <script src="/src/scripts/apartmentsJson.js"></script>
-    <script src="/src/scripts/drawer.js"></script>
-    <script src="/src/scripts/home.js"></script>
+    <script src="./src/scripts/apartmentsJson.js"></script>
+    <script src="./src/scripts/drawer.js"></script>
+    <script src="./src/scripts/home.js"></script>
 </body>
 </html>
