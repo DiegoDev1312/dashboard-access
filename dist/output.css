@@ -630,10 +630,17 @@ video {
 }
 
 .title-page {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+@media (min-width: 640px) {
+  .title-page {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
 }
 
 .resident-box {
@@ -2168,11 +2175,6 @@ video {
   padding-bottom: 0.75rem;
 }
 
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
 .pl-4 {
   padding-left: 1rem;
 }
@@ -2786,10 +2788,6 @@ video {
 
   .md\:gap-0 {
     gap: 0px;
-  }
-
-  .md\:gap-1 {
-    gap: 0.25rem;
   }
 
   .md\:p-3 {

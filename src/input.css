@@ -16,7 +16,7 @@
         @apply flex pl-3 py-3;
     }
     .title-page {
-        @apply text-white text-3xl;
+        @apply text-white text-xl sm:text-3xl;
     }
     .resident-box {
         @apply bg-white p-3 rounded-lg border-2 border-black flex items-center justify-center flex-col shadow-lg;
