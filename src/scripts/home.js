@@ -20,11 +20,6 @@ function getStatusName(status) {
     return statusName[status];
 }
 
-// abrir nova guia com o pdf
-function handleDownloadPress(url) {
-    window.open(url, "_blank");
-}
-
 // criação da tabela de apartamentos
 function createApartmentTable(table) {
     const tableRow = createElement('tr');
@@ -37,7 +32,7 @@ function createApartmentTable(table) {
     const actionImage = createElement('img');
 
     if (table.paymentSlip) {        
-        actionImage.src = './src/images/icons/pdf-icon.svg'
+        actionImage.src = '../images/icons/pdf-icon.svg'
         actionImage.className = 'h-6 w-6 pointer';
         actionTdButton.appendChild(actionImage);
         actionTdButton.addEventListener('click', () => handleDownloadPress(table.paymentSlip));
@@ -63,9 +58,9 @@ function createPages(totalPage) {
     paginationArea.innerHTML = '';
     for (let i = 0; i < totalPage; i++) {
         const paginationButton = createElement('button'); 
-        const focusButtonValue = i + 1 === page ? 12 : 10;
-        paginationButton.className =
-            `bg-zinc-700 h-${focusButtonValue} w-${focusButtonValue} flex items-center justify-center text-white rounded`;
+        const focusButtonValue = i + 1 === page ? 12 : 8;
+        console.log(focusButtonValue);
+        paginationButton.className = `h-${focusButtonValue} w-${focusButtonValue} bg-zinc-700 flex items-center justify-center text-white rounded`;
         paginationButton.textContent = i + 1;
 
         paginationButton.addEventListener('click', () => {

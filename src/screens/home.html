@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moradores</title>
+    <title>Dashboard</title>
     <link href="../../dist/output.css" rel="stylesheet">
 </head>
 <body class="grid md:grid-cols-[240px,auto] bg-zinc-800 relative">
@@ -39,26 +39,6 @@
     </nav>
     <div data-bg-opacity class="hidden">
     </div>
-    <div class="hidden">
-        <div class="resident-box">
-            <img src="" class="h-20 w-20" />
-            <h2 class="my-2 font-bold text-lg text-center"></h2>
-            <div class="flex justify-between w-full flex-col xl:flex-row">
-                <div>
-                    <h1 class="font-bold">Telefone:</h1>
-                    <h2></h2>
-                </div>
-                <div>
-                    <h1 class="font-bold">CPF:</h1>
-                    <h2></h2>
-                </div>
-                <div>
-                    <h1 class="font-bold">Apartamento:</h1>
-                    <h2></h2>
-                </div>
-            </div>
-        </div>
-    </div>
     <div>
         <header class="w-full md:px-12 px-6 bg-zinc-900">
             <div class="w-full flex items-center justify-between py-3 relative">
@@ -66,7 +46,7 @@
                     <button data-drawer-button>
                         <img class="h-8 w-8 object-cover md:hidden" src="../images/icons/hamburger-icon.svg" />
                     </button>
-                    <h1 class="title-page">Moradores</h1>
+                    <h1 class="title-page">Início</h1>
                 </div>
                 <button data-perfil-button class="h-14 w-14 rounded-full">
                     <img src="../images/icons/perfil-user-icon.svg" />
@@ -80,16 +60,28 @@
             </div>
         </header>
         <main class="w-full md:px-12 px-6 mb-7">
-            <h1 class="text-white text-xl mt-3 font-bold md:text-3xl">Moradores</h1>
-            <h2 class="text-green-500 text-base mt-1 mb-3 md:text-xl ">Listagem e dados de todos moradores</h2>
-            <div data-residents-area class="gap-3 grid grid-cols-1 2xl:grid-cols-3 sm:grid-cols-2">
-        
+            <h1 class="text-white text-xl mt-3 font-bold md:text-3xl">Apartamentos</h1>
+            <h2 class="text-green-500 text-base mt-1 mb-3 md:text-xl ">Listagem de apartamentos e boletos</h2>
+            <table class="w-full bg-zinc-700 rounded-lg mb-4">
+                <thead class="text-xs md:text-lg">
+                    <tr class="text-left text-white">
+                        <th class="p-2 md:p-3">Apartamento</th>
+                        <th>Mês</th>
+                        <th>Status</th>
+                        <th>Boleto</th>
+                    </tr>
+                </thead>
+                <tbody data-tbody-apartments class="text-xs md:text-lg">
+                </tbody>
+            </table>
+            <div data-pagination-area class="w-full flex items-center justify-center gap-2">
             </div>
         </main>
     </div>
-    <script src="../services/residentsJson.js"></script>
+    <script src="../services/apartmentsJson.js"></script>
     <script src="../scripts/drawer.js"></script>
+    <script src="../scripts/downloadFile.js"></script>
     <script src="../scripts/editPerfil.js"></script>
-    <script src="../scripts/residents.js"></script>
+    <script src="../scripts/home.js"></script>
 </body>
 </html>
