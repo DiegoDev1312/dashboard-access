@@ -3,6 +3,7 @@ const drawerButton = document.querySelector('[data-drawer-button]');
 const menuArea = document.querySelector('[data-menu-area]');
 const closeDrawerButton = document.querySelector('[data-close-drawer]');
 const bgOpacity = document.querySelector('[data-bg-opacity]');
+const documentBody = document.querySelector('body');
 
 function verifyDrawerSelected(selected) {
     menuArea.className = 'menu-area';
@@ -16,11 +17,13 @@ function verifyDrawerSelected(selected) {
 
 // função ao clicar no drawer mobile
 function handleDrawerPress() {
+    documentBody.className = 'body-container overflow-hidden h-full';
     menuArea.className = 'menu-area flex absolute';
     bgOpacity.className = 'bg-black/50 fixed top-0 right-0 left-0 bottom-0 h-screen w-screen';
 }
 
 function handleClosePress() {
+    documentBody.className = 'body-container';
     menuArea.className = 'menu-area';
     bgOpacity.className = 'hidden';
 }
