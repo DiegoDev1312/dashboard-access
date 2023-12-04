@@ -59,7 +59,6 @@ function createPages(totalPage) {
     for (let i = 0; i < totalPage; i++) {
         const paginationButton = createElement('button'); 
         const focusButtonValue = i + 1 === page ? 8 : 6;
-        console.log(focusButtonValue);
         paginationButton.className = `h-${focusButtonValue} w-${focusButtonValue} bg-zinc-700 flex items-center justify-center text-white rounded`;
         paginationButton.textContent = i + 1;
 

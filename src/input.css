@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+    .register-area {
+        @apply items-center justify-center w-full flex-col;
+    }
     .auth-input {
         @apply h-10 w-full pl-3 border border-black rounded-lg flex items-center justify-center;
     }
