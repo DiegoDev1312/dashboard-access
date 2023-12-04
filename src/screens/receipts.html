@@ -18,19 +18,19 @@
         </div>
         <menu data-menu-drawer class="w-full border-t border-white mt-7">
             <li data-menu="home" class="menu-option">
-                <a class="flex pl-3" href="../../index.html">
+                <a class="menu-link" href="../../index.html">
                     <img src="../images/icons/homeIcon.svg" class="h-6 w-6 mr-2" />
                     Início
                 </a>
             </li>
             <li  data-menu="residents" class="menu-option">
-                <a class="flex pl-3" href="../screens/residents.html">
+                <a class="menu-link" href="../screens/residents.html">
                     <img src="../images/icons/usersIcon.svg" class="h-6 w-6 mr-2 object-cover" />
                     Moradores
                 </a>
             </li>
             <li data-menu="receipts" class="menu-option">
-                <a class="flex pl-3" href="../screens/receipts.html">
+                <a class="menu-link" href="../screens/receipts.html">
                     <img src="../images/icons/notes.svg" class="h-6 w-6 mr-2 object-cover" />
                     Recibos
                 </a>
@@ -62,9 +62,25 @@
         <main class="w-full md:px-12 px-6 mb-7">
             <h1 class="text-white text-xl mt-3 font-bold md:text-3xl">Recibos</h1>
             <h2 class="text-green-500 text-base mt-1 mb-3 md:text-xl ">Listagem dos recibos pagos</h2>
+            <table class="w-full bg-zinc-700 rounded-lg mb-4">
+                <thead class="text-xs md:text-lg">
+                    <tr class="text-left text-white">
+                        <th class="p-2 md:p-3">Apartamento</th>
+                        <th>Mês</th>
+                        <th>Status</th>
+                        <th>Boleto</th>
+                    </tr>
+                </thead>
+                <tbody data-tbody-apartments class="text-xs md:text-lg">
+                </tbody>
+            </table>
+            <div data-pagination-area class="w-full flex items-center justify-center gap-2">
+            </div>
         </main>
     </div>
+    <script src="../services/apartmentsJson.js"></script>
     <script src="../scripts/drawer.js"></script>
-    <script src="../scripts/receipts.js"></script>
+    <script src="../scripts/editPerfil.js"></script>
+    <script src="../scripts/home.js"></script>
 </body>
 </html>

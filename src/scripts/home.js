@@ -1,5 +1,3 @@
-const perfilButton = document.querySelector('[data-perfil-button]');
-const perfilOptionArea = document.querySelector('[data-perfil-option]');
 const bodyApartmentsTable = document.querySelector('[data-tbody-apartments]');
 const paginationArea = document.querySelector('[data-pagination-area]');
 
@@ -17,18 +15,6 @@ const statusColor = {
 let page = 1;
 
 const createElement = (element) => document.createElement(element);
-
-function closePerfilOption() {
-    perfilOptionArea.classList.replace('block', 'hidden');
-}
-
-function handlePerfilPress() {
-    if (perfilOptionArea.classList.contains('hidden')) {
-        perfilOptionArea.classList.replace('hidden', 'block');
-    } else {
-        closePerfilOption();
-    }
-}
 
 function getStatusName(status) {
     return statusName[status];
@@ -106,8 +92,6 @@ function init() {
         createApartmentTable(apartmentInfo);
     }
 }
-
-perfilButton.addEventListener('click', handlePerfilPress);
 
 verifyDrawerSelected('home');
 init();

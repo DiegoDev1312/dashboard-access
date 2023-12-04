@@ -596,8 +596,6 @@ video {
 .menu-option {
   margin-top: 1rem;
   width: 100%;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
   transition-property: all;
@@ -609,6 +607,13 @@ video {
 .menu-option:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(22 163 74 / var(--tw-bg-opacity));
+}
+
+.menu-link {
+  display: flex;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0.75rem;
 }
 
 .title-page {
@@ -1284,10 +1289,6 @@ video {
 
 .grid-flow-col-dense {
   grid-auto-flow: column dense;
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-cols-1 {
@@ -2094,10 +2095,6 @@ video {
   padding-bottom: 0.75rem;
 }
 
-.pl-3 {
-  padding-left: 0.75rem;
-}
-
 .pl-4 {
   padding-left: 1rem;
 }
@@ -2740,10 +2737,6 @@ video {
 @media (min-width: 1280px) {
   .xl\:flex-row {
     flex-direction: row;
-  }
-
-  .xl\:text-center {
-    text-align: center;
   }
 }
 
