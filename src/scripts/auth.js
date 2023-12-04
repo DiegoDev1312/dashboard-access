@@ -7,6 +7,8 @@ const inputEmail = document.querySelector('[data-input-email]');
 const errorEmailInput = document.querySelector('[data-email-error]');
 const errorPasswordInput = document.querySelector('[data-password-error]');
 
+const userInfo = JSON.parse(localStorage.getItem('@user_persist'));
+
 function handleInputPassword() {
     if (inputPasswordIcon.src.includes('close-eye')) {
         inputPasswordIcon.setAttribute('src', './src/images/icons/show-eye.svg');
@@ -24,7 +26,23 @@ function handleLoginPress() {
     if (!inputPassword.value) {
         return errorPasswordInput.className = 'text-red-600 block';
     }
+
     window.location.href = './src/screens/home.html';
+    resetNavigationBrowser();
+    localStorage.setItem('@user_persist', JSON.stringify({
+        email: inputEmail.value,
+    }));
+}
+
+function resetNavigationBrowser() {
+    window.history.replaceState(null, null, './src/screens/home.html');
+}
+
+function checkLoginCodition() {
+    if (userInfo.email) {
+        window.location.href = './src/screens/home.html';
+        resetNavigationBrowser();
+    }
 }
 
 showPasswordButton.addEventListener('click', handleInputPassword);
@@ -38,3 +56,5 @@ inputPassword.addEventListener('keydown', () => {
 form.addEventListener('click', (event) => {
     event.preventDefault();
 });
+
+checkLoginCodition();
