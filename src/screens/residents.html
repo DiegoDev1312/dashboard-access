@@ -62,19 +62,19 @@
     <div>
         <header class="w-full md:px-12 px-6 bg-zinc-900">
             <div class="w-full flex items-center justify-between py-3 relative">
-                <div class="flex items-center gap-4">
+                <div class="flex items-center md:gap-0 gap-4">
                     <button data-drawer-button>
                         <img class="h-8 w-8 object-cover md:hidden" src="../images/icons/hamburger-icon.svg" />
                     </button>
                     <h1 class="title-page">Moradores</h1>
                 </div>
                 <button data-perfil-button class="h-14 w-14 rounded-full">
-                    <img src="../images/icons/perfil-user-icon.svg" />
+                    <img src="../images/icons/voidIcon.png" />
                 </button>
                 <div data-perfil-option class="w-40 bg-white absolute top-[4.5rem] right-6 rounded-md py-2 hidden shadow-md shadow-black">
                     <ul class="w-full">
                         <li class="h-8 hover:text-green-600 transition-all ease duration-200 flex items-center pl-4"><a href="">Editar perfil</a></li>
-                        <li class="h-8 hover:text-red-700 transition-all ease duration-200 flex items-center pl-4"><a href="">Sair</a></li>
+                        <li data-logout-button class="h-8 hover:text-red-700 transition-all ease duration-200 flex items-center pl-4"><a href="">Sair</a></li>
                     </ul>
                 </div>
             </div>
