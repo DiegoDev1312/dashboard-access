@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="./dist/output.css">
+    <link rel="shortcut icon" href="./src/images/icons/app-icon.svg" type="image/x-icon">
 </head>
 <body>
     <main>
         <div class="flex justify-between h-screen w-screen items-center">
-            <div class="justify-center items-center w-full hidden lg:flex bg-green-300 h-full">
+            <div class="justify-center items-center w-full hidden lg:flex bg-green-300 h-full flex-col">
                 <img src="./src/images/icons/bg-auth.svg" />
             </div>
             <div data-login-area class="register-area flex">
@@ -17,20 +18,22 @@
                     <fieldset class="bg-white shadow-lg p-4 text-base rounded-xl flex flex-col">
                         <h1 class="text-3xl font-bold text-center text-green-600">Seja bem-vindo</h1>
                         <h2 class="text-xl mb-3 text-center">Informe seus dados</h2>
-                        <h3 class="my-2">E-mail</h3>
-                        <div data-input-email-area class="auth-input">
-                            <img src="./src/images/icons/login-icon.svg" class="h-4 w-4 mr-3" />
-                            <input data-input-email type="email" required class="w-full h-8 outline-none" placeholder="E-mail" />
-                        </div>
+                        <label>
+                            <h3 class="my-2">E-mail</h3>
+                            <div data-input-email-area class="auth-input">
+                                <img src="./src/images/icons/login-icon.svg" class="h-4 w-4 mr-3" />
+                                <input data-input-email type="email" required class="w-full h-8 outline-none" placeholder="E-mail" />
+                            </div>
+                        </label>
                         <p data-email-error class="text-red-600 hidden">Informe o e-mail!</p>
-                        <h3 class="my-2">Senha</h3>
-                        <div data-input-password-area class="auth-input">
-                            <img src="./src/images/icons/lock-icon.svg" class="h-5 w-5 mr-3" />
-                            <input data-input-password required min="6" class="w-full h-8 outline-none" placeholder="Senha" type="password" />
-                            <button data-show-password-button>
-                                <img data-password-icon src="./src/images/icons/close-eye.svg" class="h-6 w-6 m-6" />
-                            </button>
-                        </div>
+                        <label>
+                            <h3 class="my-2">Senha</h3>
+                            <div data-input-password-area class="auth-input">
+                                <img src="./src/images/icons/lock-icon.svg" class="h-5 w-5 mr-3" />
+                                <input data-input-password="0" required min="6" class="w-full h-8 outline-none" placeholder="Senha" type="password" />
+                                <img data-show-password-button data-password-icon="0" src="./src/images/icons/close-eye.svg" class="h-6 w-6 m-6" />
+                            </div>
+                        </label>
                         <p data-password-error class="text-red-600 hidden">Informe a senha!</p>
                         <button data-login-button class="bg-green-700 text-white h-12 my-6 self-center w-40 rounded-lg">Entrar</button>
                         <p class="text-center">Não tem uma conta? <button data-go-to-register class="text-blue-500">Cadastra-se</button></p>
@@ -42,34 +45,40 @@
                     <fieldset class="bg-white shadow-lg p-4 text-base rounded-xl flex flex-col">
                         <h1 class="text-3xl font-bold text-center text-green-600">Cadastra-se!</h1>
                         <h2 class="text-xl mb-3 text-center">Informe seus dados para realizar um novo cadastro!</h2>
-                        <h3 class="my-2">Nome</h3>
-                        <div data-input-email-area class="auth-input">
-                            <img src="./src/images/icons/login-icon.svg" class="h-4 w-4 mr-3" />
-                            <input required class="w-full h-8 outline-none" placeholder="Nome" />
-                        </div>
-                        <h3 class="my-2">E-mail</h3>
-                        <div data-input-email-area class="auth-input">
-                            <img src="./src/images/icons/login-icon.svg" class="h-4 w-4 mr-3" />
-                            <input data-input-email type="email" required class="w-full h-8 outline-none" placeholder="E-mail" />
-                        </div>
-                        <p data-email-error class="text-red-600 hidden">Informe o e-mail!</p>
-                        <h3 class="my-2">Senha</h3>
-                        <div data-input-password-area class="auth-input">
-                            <img src="./src/images/icons/lock-icon.svg" class="h-5 w-5 mr-3" />
-                            <input data-input-password required min="6" class="w-full h-8 outline-none" placeholder="Senha" type="password" />
-                            <button data-show-password-button>
-                                <img data-password-icon src="./src/images/icons/close-eye.svg" class="h-6 w-6 m-6" />
-                            </button>
-                        </div>
-                        <h3 class="my-2">Confirmar nova senha</h3>
-                        <div data-input-password-area class="auth-input">
-                            <img src="./src/images/icons/lock-icon.svg" class="h-5 w-5 mr-3" />
-                            <input data-input-password required min="6" class="w-full h-8 outline-none" placeholder="Confirmar senha" type="password" />
-                            <button data-show-password-button>
-                                <img data-password-icon src="./src/images/icons/close-eye.svg" class="h-6 w-6 m-6" />
-                            </button>
-                        </div>
-                        <p data-password-error class="text-red-600 hidden">Informe a senha!</p>
+                        <label>
+                            <h3 class="my-2">Nome</h3>
+                            <div data-name-area class="auth-input">
+                                <img src="./src/images/icons/login-icon.svg" class="h-4 w-4 mr-3" />
+                                <input data-name-input required class="w-full h-8 outline-none" placeholder="Nome" />
+                            </div>
+                        </label>
+                        <p data-name-error class="text-red-600 hidden">Informe o nome!</p>
+                        <label>
+                            <h3 class="my-2">E-mail</h3>
+                            <div data-register-email-area class="auth-input">
+                                <img src="./src/images/icons/login-icon.svg" class="h-4 w-4 mr-3" />
+                                <input data-register-email type="email" required class="w-full h-8 outline-none" placeholder="E-mail" />
+                            </div>
+                        </label>
+                        <p data-register-email-error class="text-red-600 hidden">Informe o e-mail!</p>
+                        <label>
+                            <h3 class="my-2">Senha</h3>
+                            <div data-register-password-area class="auth-input">
+                                <img src="./src/images/icons/lock-icon.svg" class="h-5 w-5 mr-3" />
+                                <input data-input-password="1" required min="6" class="w-full h-8 outline-none" placeholder="Senha" type="password" />
+                                <img data-show-password-button="1" data-password-icon="1" src="./src/images/icons/close-eye.svg" class="h-6 w-6 m-6" />
+                            </div>
+                        </label>
+                        <p data-register-password-error class="text-red-600 hidden">Informe a senha!</p>
+                        <label>
+                            <h3 class="my-2">Confirmar nova senha</h3>
+                            <div data-confirm-password-area class="auth-input">
+                                <img src="./src/images/icons/lock-icon.svg" class="h-5 w-5 mr-3" />
+                                <input data-input-password="2" required min="6" class="w-full h-8 outline-none" placeholder="Confirmar senha" type="password" />
+                                <img data-show-password-button="2" data-password-icon="2" src="./src/images/icons/close-eye.svg" class="h-6 w-6 m-6" />
+                            </div>
+                        </label>
+                        <p data-register-confirm-error class="text-red-600 hidden">Informe a senha!</p>
                         <button data-register-button class="bg-green-700 text-white h-12 my-6 self-center w-40 rounded-lg">Registrar</button>
                         <p class="text-center">Ja tem uma conta? <button data-go-to-login class="text-blue-500">Faça o login</button></p>
                     </fieldset>
