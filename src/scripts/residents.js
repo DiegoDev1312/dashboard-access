@@ -18,7 +18,6 @@ function renderResidents() {
     for (const resident of residentsJson) {
         createResidents(resident);
     }
-
 }
 
 renderResidents();

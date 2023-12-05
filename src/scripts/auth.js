@@ -2,25 +2,32 @@ const forms = document.querySelectorAll('form');
 const allInputPassword = document.querySelectorAll('[data-input-password]');
 const showPasswordButton = document.querySelectorAll('[data-show-password-button]');
 const loginButton = document.querySelector('[data-login-button]');
-const inputEmail = document.querySelector('[data-input-email]');
-const errorEmailInput = document.querySelector('[data-email-error]');
-const errorPasswordInput = document.querySelector('[data-password-error]');
-const authInputEmailArea = document.querySelector('[data-input-email-area]');
-const authInputPasswordArea = document.querySelector('[data-input-password-area]');
+const goToLoginButton = document.querySelector('[data-go-to-login]');
+const registerButton = document.querySelector('[data-register-button]');
 const goToRegisterButton = document.querySelector('[data-go-to-register]');
 const loginArea = document.querySelector('[data-login-area]');
 const registerArea = document.querySelector('[data-register-area]');
-const goToLoginButton = document.querySelector('[data-go-to-login]');
-const registerButton = document.querySelector('[data-register-button]');
 
+// input login - email
+const inputEmail = document.querySelector('[data-input-email]');
+const errorEmailInput = document.querySelector('[data-email-error]');
+const authInputEmailArea = document.querySelector('[data-input-email-area]');
+
+// input login - password
+const errorPasswordInput = document.querySelector('[data-password-error]');
+const authInputPasswordArea = document.querySelector('[data-input-password-area]');
+
+// input register - name
 const registerNameArea = document.querySelector('[data-name-area]');
 const registerNameErrorText = document.querySelector('[data-name-error]');
 const registerNameInput = document.querySelector('[data-name-input]');
 
+// input register - email
 const registerEmailArea = document.querySelector('[data-register-email-area');
 const registerEmailError = document.querySelector('[data-register-email-error]');
 const registerEmailInput = document.querySelector('[data-register-email]');
 
+// input regiter - password and confirm new password
 const registerPasswordArea = document.querySelector('[data-register-password-area]');
 const registerConfirmPasswordArea = document.querySelector('[data-confirm-password-area]');
 const registerPasswordMessage = document.querySelector('[data-register-password-error]');
@@ -50,7 +57,6 @@ function goToHome(email) {
 
 // mudar visualização da senha
 function handleInputPassword(event) {
-    console.log(event.target);
     const idClicked = Number(event.target.attributes['data-password-icon']?.value);
     if (event.target.src.includes('close')) {
         allInputPassword[idClicked].type = 'text';
@@ -108,16 +114,8 @@ function resetNavigationBrowser() {
     window.history.replaceState(null, null, './src/screens/home.html');
 }
 
-// verificação condição para enviar o usuário direto para tela de home
-function checkLoginCodition() {
-    for (const form of forms) {
-        form.addEventListener('click', (event) => {
-            event.preventDefault();
-        });
-    }
-    for (const showButton of showPasswordButton) {
-        showButton.addEventListener('click', handleInputPassword);
-    }
+// resetando os erros ao digitar no input
+function resetPasswordInputs() {
     for (const inputPassword of allInputPassword) {
         inputPassword.addEventListener('keyup', () => {
             const idInput = inputPassword.getAttribute('data-input-password');
@@ -130,6 +128,19 @@ function checkLoginCodition() {
             return resetInputStyles(registerConfirmPasswordArea, registerConfirmPasswordMessage);
         });
     }
+}
+
+// verificação condição para enviar o usuário direto para tela de home
+function checkLoginCodition() {
+    for (const form of forms) {
+        form.addEventListener('click', (event) => {
+            event.preventDefault();
+        });
+    }
+    for (const showButton of showPasswordButton) {
+        showButton.addEventListener('click', handleInputPassword);
+    }
+    resetPasswordInputs();
     if (userInfo.email) {
         window.location.href = './src/screens/home.html';
         resetNavigationBrowser();
