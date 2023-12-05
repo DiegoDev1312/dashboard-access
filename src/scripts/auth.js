@@ -115,17 +115,17 @@ function resetNavigationBrowser() {
 }
 
 // resetando os erros ao digitar no input
-function resetPasswordInputs() {
+function resetPasswordInputErrors() {
     for (const inputPassword of allInputPassword) {
         inputPassword.addEventListener('keyup', () => {
             const idInput = inputPassword.getAttribute('data-input-password');
             if (idInput === '0') {
-                return resetInputStyles(authInputPasswordArea, errorPasswordInput);
+                return changeLoginPassword();
             }
             if (idInput === '1') {
-                return resetInputStyles(registerPasswordArea, registerPasswordMessage);
+                return changeRegisterPassword();
             }
-            return resetInputStyles(registerConfirmPasswordArea, registerConfirmPasswordMessage);
+            return changeRegisterConfirmPassword();
         });
     }
 }
@@ -140,7 +140,7 @@ function checkLoginCodition() {
     for (const showButton of showPasswordButton) {
         showButton.addEventListener('click', handleInputPassword);
     }
-    resetPasswordInputs();
+    resetPasswordInputErrors();
     if (userInfo.email) {
         window.location.href = './src/screens/home.html';
         resetNavigationBrowser();
@@ -152,13 +152,38 @@ function resetInputStyles(inputName, inputArea) {
     inputArea.className = 'hidden';
 }
 
+function resetInputPasswordValues() {
+    for (const inputPassword of allInputPassword) {
+        inputPassword.value = '';
+    }
+}
+
+function resetRegisterValuesAndErros() {
+    inputEmail.value = '';
+    changeLoginPassword();
+    changeEmailInput();
+    resetInputPasswordValues();
+}
+
+function resetLoginValuesAndErros() {
+    registerNameInput.value = '';
+    registerEmailInput.value = '';
+    resetInputPasswordValues();
+    changeRegisterPassword();
+    changeRegisterConfirmPassword();
+    changeNameInput();
+    changeRegisterEmail();
+}
+
 function handleGoToRegister() {
+    resetLoginValuesAndErros();
     document.title = 'Registrar';
     loginArea.className = 'register-area hidden';
     registerArea.className = 'register-area flex';
 }
 
 function handleGoToLoginPress() {
+    resetRegisterValuesAndErros();
     document.title = 'Login';
     loginArea.className = 'register-area flex';
     registerArea.className = 'register-area hidden';
@@ -174,6 +199,18 @@ function changeNameInput() {
 
 function changeRegisterEmail() {
     resetInputStyles(registerEmailArea, registerEmailError);
+}
+
+function changeLoginPassword() {
+    resetInputStyles(authInputPasswordArea, errorPasswordInput);
+}
+
+function changeRegisterPassword() {
+    resetInputStyles(registerPasswordArea, registerPasswordMessage);
+}
+
+function changeRegisterConfirmPassword() {
+    resetInputStyles(registerConfirmPasswordArea, registerConfirmPasswordMessage);
 }
 
 loginButton.addEventListener('click', handleLoginPress);
